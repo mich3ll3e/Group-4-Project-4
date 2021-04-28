@@ -7,7 +7,6 @@ module.exports = function validateRegisterInput(data) {
   data.lastName = !isEmpty(data.lastName) ? data.lastName : "";
   data.dateOfBirth = !isEmpty(data.dateOfBirth) ? data.dateOfBirth : "";
   data.email = !isEmpty(data.email) ? data.email : "";
-  data.userName = !isEmpty(data.userName ) ? data.userName  : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 // First name checks
@@ -26,10 +25,6 @@ module.exports = function validateRegisterInput(data) {
     errors.email = "Email field is required";
   } else if (!Validator.isEmail(data.email)) {
     errors.email = "Email is invalid";
-  }
-  //username checkes
-  if (Validator.isEmpty(data.userName)) {
-    errors.userName = "User name field is required";
   }
 // Password checks
   if (Validator.isEmpty(data.password)) {
