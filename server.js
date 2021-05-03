@@ -31,6 +31,7 @@ app.use(passport.initialize());
 require("./config/passport");
 // Routes
 app.use("/api/users", users);
+app.use("/api/todo",todo);
 
 // Send every request to the React app
 // Define any API routes before this runs
