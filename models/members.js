@@ -15,12 +15,14 @@ const MembersSchema = new Schema({
     required: true
   },
   photo: {
-    type: String,
-    required: true
+   type: String,
+   required: false
+
   },
   date: {
-    data: Buffer,
-    contentType: String
+    
+    type: String,
+    required: true
   },
   relatedFamily :[
       {
