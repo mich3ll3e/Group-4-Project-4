@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
-const UserSchema = new Schema({
+const MembersSchema = new Schema({
   firstName: {
     type: String,
     required: true
@@ -14,19 +14,23 @@ const UserSchema = new Schema({
     type: Date,
     required: true
   },
-  email: {
+  photo: {
+   type: String,
+   required: false
+
+  },
+  date: {
+    
     type: String,
     required: true
   },
-  password: {
-    type: String,
-    required: true
-  }
-  ,
-  date: {
-    type: Date,
-    default: Date.now
-  }
+  relatedFamily :[
+      {
+          type:mongoose.Schema.type.objectId,
+          ref:"users"
+      }
+
+  ]
 
 });
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = User = mongoose.model("members", MembersSchema);
