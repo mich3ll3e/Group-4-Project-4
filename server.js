@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const passport = require("passport");
 const users = require("./routes/api/users");
+const todo = require("./routes/api/todo");
+
 
 // Bodyparser middleware
 app.use(
