@@ -3,12 +3,14 @@ const mongoose = require("mongoose");
 const path = require("path");
 const bodyParser=require("body-parser");
 const PORT = process.env.PORT || 3001;
+const cors = require('cors');
 const app = express();
 const passport = require("passport");
 const users = require("./routes/api/users");
 const todo = require("./routes/api/todo");
 
 
+app.use(cors());
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
