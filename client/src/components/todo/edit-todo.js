@@ -34,14 +34,7 @@ export default class EditTodo extends Component {
             })
         //this.getData();
     }
-    // async getData(){
-    //     const res = await axios.get('http://localhost:3001/api/todo/todos/'+this.props.match.params.id)
-    //     const { data }= await res;
-    //     this.setState({
-    //         title: data.title,
-    //         responsible: data.responsible,
-    //         complete: data.complete})
-    // }
+    
     deleteTodo = async(e) =>{
         e.preventDefault();
         await axios
