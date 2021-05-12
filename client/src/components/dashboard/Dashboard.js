@@ -10,6 +10,7 @@ import store from "../../store"
 import ReactDOM from "react-dom";
 import { SidebarData} from "./sidebarData"
 import PrivateRoute from "../private-route/PrivateRoute";
+import Reminder from "../members/membersList"
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,8 @@ class Dashboard extends Component {
 
 render() {
     const { user } = this.props.auth;
+    console.log(user.email);
+    
 return (
   <Provider store={store}>
     <Router >
@@ -41,7 +44,7 @@ return (
     <div className="container main-page"> 
     <div className="row">
 
-    <div className="col-lg-2 col-xm-12 sd">
+    <div className="col-lg-2 col-sm-4 sb">
       <div className="container">
      <Sidebar /> 
      </div>
@@ -60,7 +63,7 @@ return (
                 </ul>
     </div>
     </div> */}
-    <div className="col-lg-5 col-xm-12 a-w-m a-i-m">
+    <div className="col-lg-5 col-sm-8 a-w-m a-i-m">
   <Switch>
  {SidebarData.map((route, index) =>
  <PrivateRoute 
@@ -74,8 +77,9 @@ return (
  <PrivateRoute exact path="/dashboard/edit/:id" component={EditTodo} />
 </Switch> 
     </div>
-    <div className="col-lg-5 col-xm-12 a-w-m a-i-m">
-     <h3 style={{textAlign:"center"}}>Birthday Reminder</h3> 
+    <div className="col-lg-5 col-sm-12 a-w-m a-i-m">
+     <h4 style={{textAlign:"center", }}>Birthday Reminder</h4>
+     <Reminder />
     </div>
     </div>
     </div>

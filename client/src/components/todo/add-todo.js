@@ -13,7 +13,9 @@ import { withRouter } from "react-router-dom";
 
         this.state = {
            title: '',
+           titleError:"",
            responsible: '',
+           responsibleError:""
            //complete: false
         }
     }
@@ -29,10 +31,33 @@ import { withRouter } from "react-router-dom";
             responsible: e.target.value
         });
     }
-
+    validate = () => {
+        let isError = false;
+        const errors = {
+         titleError: "",
+         responsibleError: ""
+        };
+    
+        if (!(this.state.title)) {
+          isError = true;
+          errors.emailError = "Please enter a  description";
+        }
+        if (!(this.state.responsible)) {
+            isError = true;
+            errors.emailError = "Please enter a responsible";
+          }
+    
+        this.setState({
+          ...this.state,
+          ...errors
+        });
+    
+        return isError;
+      };
 
     onSubmit=async(e)=> {
         e.preventDefault();
+        this.validate();
         
         console.log(`Form submitted:`);
         console.log(`Todo Description: ${this.state.title}`);
@@ -64,8 +89,12 @@ import { withRouter } from "react-router-dom";
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.title}
+                                placeholder="Description"
                                 onChange={this.onChangeTodoDescription}
+                                ref="title"
+                                 error={this.state.titleError}
                                 />
+                                <span style={{color: "red"}}>{this.state.titleError}</span>
                     </div>
                     <div className="form-group">
                         <label>Responsible: </label>
@@ -73,8 +102,12 @@ import { withRouter } from "react-router-dom";
                                 type="text" 
                                 className="form-control"
                                 value={this.state.responsible}
+                                placeholder="Responsible"
                                 onChange={this.onChangeTodoResponsible}
+                                ref="responsible"
+                                 error={this.state.responsibleError}
                                 />
+                                 <span style={{color: "red"}}>{this.state.titleError}</span>
                     </div>
 
                     <div className="form-group">

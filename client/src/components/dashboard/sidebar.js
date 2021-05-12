@@ -20,7 +20,7 @@ class Sidebar  extends Component {
                 <Link className ="link-calor" to="/dashboard/create">Create Todo</Link>
                 </li>
                 <li>
-                <Link className ="link-calor" to="#">Family Members</Link>
+                <Link className ="link-calor" to="/dashboard/family">Family Members</Link>
                 </li>
                 <li>
                 <Link className ="link-calor" to="#">Events</Link>

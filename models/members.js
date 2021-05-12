@@ -4,15 +4,18 @@ const Schema = mongoose.Schema;
 const MembersSchema = new Schema({
   firstName: {
     type: String,
-    required: true
+    required: "First name is required",
+    trim:true
   },
   lastName: {
     type: String,
-    required: true
+    required: "last name is required",
+    trim:true
   },
   dateOfBirth: {
     type: Date,
-    required: true
+    required: "last name is required",
+    trim:false
   },
   photo: {
    type: String,
