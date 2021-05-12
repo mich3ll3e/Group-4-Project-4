@@ -10,7 +10,7 @@ class Sidebar  extends Component {
           
             <div className="sidebar">
                 <div>
-                    <h2 style={{textAlign:"center"}}>Menu</h2>
+                    <h3 style={{textAlign:"center"}}>Menu</h3>
                 </div>
                 <ul>
                 <li>
@@ -20,13 +20,13 @@ class Sidebar  extends Component {
                 <Link className ="link-calor" to="/dashboard/create">Create Todo</Link>
                 </li>
                 <li>
-                Family Members
+                <Link className ="link-calor" to="#">Family Members</Link>
                 </li>
                 <li>
-                Events
+                <Link className ="link-calor" to="#">Events</Link>
                 </li>
                 <li>
-                    Setiings
+                <Link className ="link-calor" to="#">Settings</Link>
                 </li>
                 </ul>
              </div>

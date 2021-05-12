@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-export default class CreateTodo extends Component {
+import { withRouter } from "react-router-dom";
+
+ class CreateTodo extends Component {
 
     constructor(props) {
         super(props);
@@ -49,7 +51,7 @@ export default class CreateTodo extends Component {
             responsible: '',
             //complete: false
         })
-        this.props.history.push('/dashboard');
+        this.props.history.push("/dashboard");
     }
 
     render() {
@@ -83,3 +85,5 @@ export default class CreateTodo extends Component {
         )
     }
 }
+
+export default withRouter (CreateTodo)

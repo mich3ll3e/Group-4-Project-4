@@ -14,10 +14,5 @@ export const SidebarData =[
         title:"Create Todo",
         path:"/dashboard/create",
         main: ()=> <AddTodo />
-    },
-    {
-        title:"Edit Todo",
-        path:"/dashboard/edit",
-        main: ()=> <EditTodo />
     }
 ]

@@ -8,6 +8,7 @@ const app = express();
 const passport = require("passport");
 const users = require("./routes/api/users");
 const todo = require("./routes/api/todo");
+const members =require("./routes/api/members");
 
 
 app.use(cors());
@@ -33,9 +34,11 @@ mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/familyapp");
 app.use(passport.initialize());
 // Passport config
 require("./config/passport");
+
 // Routes
 app.use("/api/users", users);
 app.use("/api/todo",todo);
+app.use("/api/members",members);
 
 // Send every request to the React app
 // Define any API routes before this runs

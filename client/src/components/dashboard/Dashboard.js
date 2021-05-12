@@ -16,7 +16,7 @@ import {
   Route,
   Link,
   useParams,
-  useRouteMatch
+  withRouter
 } from "react-router-dom";
 import TodoList from "../todo/todos-list";
 import AddTodo from "../todo/add-todo";
@@ -35,14 +35,16 @@ render() {
     const { user } = this.props.auth;
 return (
   <Provider store={store}>
-    <Router>
+    <Router >
   <div className="dashboard" >
     <NavBar />
-    <div className="container"> 
+    <div className="container main-page"> 
     <div className="row">
 
-    <div className="col-lg-3 col-xm-12">
+    <div className="col-lg-2 col-xm-12 sd">
+      <div className="container">
      <Sidebar /> 
+     </div>
      </div>
     {/* <div className="sidebar">
                 <div>
@@ -58,7 +60,7 @@ return (
                 </ul>
     </div>
     </div> */}
-    <div className="col-lg-4 col-xm-12">
+    <div className="col-lg-5 col-xm-12 a-w-m a-i-m">
   <Switch>
  {SidebarData.map((route, index) =>
  <PrivateRoute 
@@ -69,11 +71,11 @@ return (
  component={route.main}
   />
   )} 
- <PrivateRoute exact path="dashboard/edit/:id" component={EditTodo} />
+ <PrivateRoute exact path="/dashboard/edit/:id" component={EditTodo} />
 </Switch> 
     </div>
-    <div className="col-lg-3 col-xm-12">
-      Birthday Reminder
+    <div className="col-lg-5 col-xm-12 a-w-m a-i-m">
+     <h3 style={{textAlign:"center"}}>Birthday Reminder</h3> 
     </div>
     </div>
     </div>
@@ -91,7 +93,7 @@ Dashboard.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
-export default connect(
+export default withRouter ( connect(
   mapStateToProps,
   { logoutUser }
-)(Dashboard);
+)(Dashboard));

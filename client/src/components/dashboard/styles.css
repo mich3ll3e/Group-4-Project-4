@@ -13,6 +13,32 @@
   --primary-green: green;
 }
  /************************Dashbord *************************/
+ .main-page{
+     margin-top: 20px;
+ }
+ .a-w-m {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .a-i-m {
+    width: 450px;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
+  }
+    .a-i-m1 {
+        width: 450px;
+        background: #ffffff;
+        box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+        padding: 40px 55px 45px 55px;
+        border-radius: 15px;
+        transition: all .3s;
+  }
 /* ------------------------NAVBAR------------------------- */
 nav {
     z-index: 2;
@@ -36,7 +62,7 @@ nav {
     border-top: 0.1875rem solid var(--primary-white);
   }
  .navbar-brand > span {
-     color: white;
+     color: white !important;
   
   }
   @media(max-width: 768px) {
@@ -72,3 +98,9 @@ nav {
     margin: 5px;
     padding: 0;
   }
+  .link-calor{
+      color:var(--primary-white);
+  }
+.sd{
+    margin-left:-10px;
+}

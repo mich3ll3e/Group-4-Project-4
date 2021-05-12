@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { withRouter } from "react-router-dom";
 
 const Todo = props => (
     <tr>
@@ -12,7 +13,7 @@ const Todo = props => (
     </tr>
 )
 
-export default class TodosList extends Component {
+ class TodosList extends Component {
 
     constructor(props) {
         super(props);
@@ -36,9 +37,11 @@ export default class TodosList extends Component {
     }
 
     render() {
+        let {data}=this.state
         return (
             <div>
-                <h3>Todos List</h3>
+                <h4 style={{textAlign:"center"}}>Todo List</h4>
+        
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
@@ -55,3 +58,4 @@ export default class TodosList extends Component {
         )
     }
 }
+export default withRouter (TodosList)

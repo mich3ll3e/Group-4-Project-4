@@ -2,6 +2,7 @@
 
 const Validator = require("validator");
 const isEmpty = require("is-empty");
+const { default: validator } = require("validator");
 module.exports = function validateMemberInput(data) {
   let errors = {};
 // Convert empty fields to an empty string so we can use validator functions
@@ -18,6 +19,9 @@ module.exports = function validateMemberInput(data) {
   }
   if (Validator.isEmpty(data.dateOfBirth)) {
     errors.dateOfBirth = "date of birth  field is required";
+  }
+  if(validator.isDate(data.dateOfBirth)) {
+    errors.dateOfBirth1 = "Please enter a valid Date";
   }
 return {
     errors,
