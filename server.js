@@ -18,13 +18,16 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 //Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/familyapp");
-const db = `${MONGODB_URI}/${MONGO_DB_NAME}`;
-mongoose.connect(db, {
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/familyapp",{
   useNewUrlParser:true,
   useCreateIndex:true,
   useUnifiedTopology:true
-}).then(()=>console.log('MongoDB connected!'))
+})
+// const db = `${MONGODB_URI}/${MONGO_DB_NAME}`;
+// mongoose.connect({
+//   useNewUrlParser:true,
+//   useCreateIndex:true,
+//   useUnifiedTopology:true.then(()=>console.log('MongoDB connected!'))
 .catch(err => console.log(err));
 
 // Passport middleware
