@@ -3,14 +3,16 @@ const schema= mongoose.Schema
 const todoSchema = new schema({
     title:{
         type: String,
-        required: true
+        required: "Please enter a description",
+        trim:true
     },
     responsible:{
         type: String,
-        required: true
+        required: "Please enter a responsible",
+        trime:true
     },
     complete:{
-        type:Boolean,
+        type:Boolean, 
         default:false
     }
 })

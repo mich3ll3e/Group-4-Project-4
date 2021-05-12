@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import "./styles.css";
+import logo from "../dashboard/UnitedUs.png"
 
  class Login extends Component {
     constructor() {
@@ -54,6 +55,7 @@ import "./styles.css";
         const { errors } = this.state;
         return (
           <div className="container a-w a-i">
+            <img className="logo" src={logo} alt="logo..." />
             <form noValidate onSubmit={this.onSubmit}>
                 <div className="icon"><FontAwesomeIcon icon={faUserLock} size="3x"/>  </div>
                 <h3 style={{marginTop:'20px'}}>Sign In</h3>

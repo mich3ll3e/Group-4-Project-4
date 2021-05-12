@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const Todo = require("../../models/Todo");
+const validateTodoInput = require("../../validation/todo");
+const Todo = require("../../models/todo");
 //Get all the lists
+
 router.get("/todos/:id",(req, res) => {
+    
     Todo.findById(req.params.id, function(err, todo){
         if(!todo)
         res.status(404).send("data is not found");
@@ -16,6 +19,11 @@ router.get("/todos",(req, res) => {
 })
 //add a new todo
 router.post("/todos",async (req,res)=> {
+//     const { errors, isValid } = validateTodoInput(req.body);
+//   // Check validation
+//    if (!isValid) {
+//      return res.status(400).json(errors);
+//     }
     const newTodo = Todo({
         title:req.body.title,
         responsible:req.body.responsible
@@ -32,7 +40,13 @@ router.delete("/todos/:id", (req, res) => {
     Todo.findByIdAndDelete(req.params.id)
     .then(()=>res.json({ remove: true }))
 });
+
 router.post("/todos/:id",(req,res)=>{
+//     const { errors, isValid } = validateTodoInput(req.body);
+//   // Check validation
+//    if (!isValid) {
+//      return res.status(400).json(errors);
+//     }
     Todo.findById(req.params.id, function(err, todo){
         if(!todo)
         res.status(404).send("data is not found");

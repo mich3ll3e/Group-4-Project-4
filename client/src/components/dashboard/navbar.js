@@ -7,6 +7,7 @@ import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./styles.css";
+import logo from "./UnitedUs.png";
 
 class NavBar extends Component { 
     onLogoutClick = e => {
@@ -17,7 +18,8 @@ class NavBar extends Component {
       return(
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
   <div className="container">
-    <span style={{color:"white"}}className="navbar-brand" >Family App </span>
+    {/* <span style={{color:"white"}}className="navbar-brand" >UnitedUs </span> */}
+    <a className="navbar-brand" href="#"><img className="logo" src={logo} alt="logo..." /></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <FontAwesomeIcon icon={faBars} style={{color:"#fff"}}/>
     </button>
