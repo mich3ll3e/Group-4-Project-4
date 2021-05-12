@@ -18,6 +18,9 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
+import TodoList from "../todo/todos-list";
+import AddTodo from "../todo/add-todo";
+import EditTodo from "../todo/edit-todo";
 
 import NavBar from "./navbar"
 import Sidebar from "./sidebar"
@@ -32,23 +35,41 @@ render() {
     const { user } = this.props.auth;
 return (
   <Provider store={store}>
+    <Router>
   <div className="dashboard" >
     <NavBar />
     <div className="container"> 
     <div className="row">
 
     <div className="col-lg-3 col-xm-12">
-    <Sidebar />
+     <Sidebar /> 
+     </div>
+    {/* <div className="sidebar">
+                <div>
+                <h2 style={{textAlign:"center"}}>Menu</h2>
+                </div>
+                <ul>
+                <li>
+                <Link className ="link-calor" to="/dashboard">Home</Link>
+                </li>
+                <li>
+                <Link className ="link-calor" to={`${this.props.match.url}/create`}>Create Todo</Link>{" "}
+                </li>
+                </ul>
     </div>
+    </div> */}
     <div className="col-lg-4 col-xm-12">
-    <Switch>
+  <Switch>
  {SidebarData.map((route, index) =>
  <PrivateRoute 
+  //exact path={`${this.props.match.url}/create`} Component={AddTodo}
   key={index}
   path={route.path}
   exact={route.exact}
- component={route.main} />
- )} 
+ component={route.main}
+  />
+  )} 
+ <PrivateRoute exact path="dashboard/edit/:id" component={EditTodo} />
 </Switch> 
     </div>
     <div className="col-lg-3 col-xm-12">
@@ -57,6 +78,7 @@ return (
     </div>
     </div>
 </div>
+</Router>
 </Provider>
     );
   }

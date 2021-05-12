@@ -49,7 +49,7 @@ export default class CreateTodo extends Component {
             responsible: '',
             //complete: false
         })
-        this.props.history.push('/');
+        this.props.history.push('/dashboard');
     }
 
     render() {
