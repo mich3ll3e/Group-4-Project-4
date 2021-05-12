@@ -18,12 +18,12 @@ export default class EditTodo extends Component {
             complete: false
         }
     }
-    
+   
      componentDidMount() {
         //  if (this.props.match && this.props.computeMatch.params.id) {
          //const postid= this.props.computeMatch.params.id
-         console.log(this.state.id);
-         axios.get('http://localhost:3001/api/todo/todos/'+this.props.computedMatch.params.id)
+         console.log(this.props);
+         axios.get('http://localhost:3001/api/todo/todos/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     title: response.data.title,
@@ -76,7 +76,7 @@ export default class EditTodo extends Component {
         await axios.post('http://localhost:3001/api/todo/todos/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
-        this.props.history.push('/');
+        this.props.history.push('/dashboard');
     }
 
     render() {

@@ -23,13 +23,13 @@ const MembersSchema = new Schema({
     type: Date,
     default:Date.now
   },
-  relatedFamily :[
+  family :
       {
-          type:mongoose.Schema.type.objectId,
-          ref:"users"
+          type:String,
+          required:false
       }
 
-  ]
+  
 
 });
 module.exports = User = mongoose.model("members", MembersSchema);

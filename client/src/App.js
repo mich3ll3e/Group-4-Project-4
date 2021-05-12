@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, withRouter} from "react-router-dom";
+import { browserHistory } from "react-router"
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -51,7 +52,7 @@ function App() {
   //  </> */}
   <div className="auth-wrapper">
    <div className="auth-inner">
-   <Router>
+   <Router > 
    <div className="container">
      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
        <a className="navbar-brand" href="#" target="_blank">
@@ -88,5 +89,4 @@ function App() {
  </Provider>
 );
 }
-
-export default App;
+export default withRouter (App);
