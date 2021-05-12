@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const validateTodoInput = require("../../validation/todo");
 const Todo = require("../../models/todo");
 //Get all the lists
 
