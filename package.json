@@ -4,7 +4,7 @@
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
-    "start": "npm run dev",
+    "start": "node server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "npm start --prefix client",
