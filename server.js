@@ -1,12 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-import bodyParser from "body-parser";
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const cors = require('cors');
 const app = express();
 const passport = require("passport");
-import morgan from 'morgan';
+const morgan = require('morgan');
 const users = require("./routes/api/users");
 const todo = require("./routes/api/todo");
 const members =require("./routes/api/members");
