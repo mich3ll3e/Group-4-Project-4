@@ -1,7 +1,7 @@
 # Group-4-Project-4
 
 ## Deployment
-https://dashboard.heroku.com/apps/group4-project3
+https://group4-project3.herokuapp.com/
 
 ## Description
 United Us is an application allows family to create and to share their special memories. You are able to create your family’s list of chores, reminder of special events are coming up.
