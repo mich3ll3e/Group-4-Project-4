@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/familyapp",{
 //   useNewUrlParser:true,
 //   useCreateIndex:true,
 //   useUnifiedTopology:true.then(()=>console.log('MongoDB connected!'))
-.catch(err => console.log(err));
+// .catch(err => console.log(err));
 
 // Passport middleware
 app.use(passport.initialize());
