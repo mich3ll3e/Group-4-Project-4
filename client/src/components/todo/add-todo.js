@@ -68,7 +68,7 @@ import { withRouter } from "react-router-dom";
             responsible: this.state.responsible,
             //complete: this.state.complete
         };
-        await axios.post('/api/todo/todos', newTodo)
+        await axios.post("/api/todo/todos", newTodo)
             .then(res => console.log(res.data));
         
         this.setState({
