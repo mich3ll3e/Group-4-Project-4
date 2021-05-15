@@ -21,7 +21,7 @@ const Todo = props => (
     }
 
     componentDidMount() {
-        axios.get('api/todo/todos/')
+        axios.get('/api/todo/todos/')
             .then(response => {
                 this.setState({ todos: response.data });
             })

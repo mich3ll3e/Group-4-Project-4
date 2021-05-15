@@ -42,7 +42,7 @@ export default class EditTodo extends Component {
     deleteTodo = async(e) =>{
         e.preventDefault();
         await axios
-          .delete('api/todo/todos/'+this.props.match.params.id)
+          .delete('/api/todo/todos/'+this.props.match.params.id)
           .then(res => console.log(res.data))
           this.props.history.push('/dashboard');
       };

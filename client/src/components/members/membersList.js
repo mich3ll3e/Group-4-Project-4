@@ -12,7 +12,7 @@ import Moment from "moment";
     }
 
     componentDidMount() {
-        axios.get('api/members/members')
+        axios.get('/api/members/members')
             .then(response => {
                 this.setState({ members: response.data });
             })
