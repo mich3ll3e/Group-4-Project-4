@@ -19,9 +19,8 @@ app.use(bodyParser.json());
 
 //Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/familyapp",{
-  useNewUrlParser:true,
-  useCreateIndex:true,
-  useUnifiedTopology:true
+  useNewUrleParser: true,
+useFindAndModify: false
 })
 // const db = `${MONGODB_URI}/${MONGO_DB_NAME}`;
 // mongoose.connect({
