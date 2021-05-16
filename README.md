@@ -1,12 +1,13 @@
 # Group-4-Project-4
 
 ## Deployment
-https://group4-project3.herokuapp.com/
+https://still-wildwood-07362.herokuapp.com/
 
 ## Description
 United Us is an application allows family to create and to share their special memories. You are able to create your family’s list of chores, reminder of special events are coming up.
 
 ## Screenshot
+![image](https://user-images.githubusercontent.com/73787879/118384159-e2098880-b5d1-11eb-9743-b3751a7a7797.png)
 
 
 ## User Story
