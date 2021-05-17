@@ -23,7 +23,7 @@ export default class EditTodo extends Component {
         //  if (this.props.match && this.props.computeMatch.params.id) {
          //const postid= this.props.computeMatch.params.id
          console.log(this.props);
-         axios.get('http://localhost:3001/api/todo/todos/'+this.props.match.params.id)
+         axios.get('/api/todo/todos/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     title: response.data.title,
@@ -42,7 +42,7 @@ export default class EditTodo extends Component {
     deleteTodo = async(e) =>{
         e.preventDefault();
         await axios
-          .delete('http://localhost:3001/api/todo/todos/'+this.props.match.params.id)
+          .delete('/api/todo/todos/'+this.props.match.params.id)
           .then(res => console.log(res.data))
           this.props.history.push('/dashboard');
       };
@@ -73,7 +73,7 @@ export default class EditTodo extends Component {
             complete: this.state.complete
         };
         console.log(obj);
-        await axios.post('http://localhost:3001/api/todo/todos/'+this.props.match.params.id, obj)
+        await axios.post('/api/todo/todos/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
         this.props.history.push('/dashboard');

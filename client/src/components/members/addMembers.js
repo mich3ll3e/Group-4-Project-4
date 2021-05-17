@@ -86,7 +86,7 @@ import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
             //complete: this.state.complete
         };
         console.log(newMember);
-        await axios.post('http://localhost:3001/api/members/members', newMember)
+        await axios.post('/api/members/members', newMember)
             .then(res => console.log(res.data));
             console.log("test")
         
