@@ -58,10 +58,10 @@ import logo from "../dashboard/UnitedUs.png"
             <img className="logo" src={logo} alt="logo..." />
             <form noValidate onSubmit={this.onSubmit}>
                 <div className="icon"><FontAwesomeIcon icon={faUserLock} size="3x"/>  </div>
-                <h3 style={{marginTop:'20px'}}>Sign In</h3>
+                <h3 style={{marginTop:'20px'}}>Unite Us</h3>
 
                 <div className="form-group">
-                    <label>Email address</label>
+                    <label>Email address:</label>
                     <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
@@ -78,7 +78,7 @@ import logo from "../dashboard/UnitedUs.png"
                 </div>
 
                 <div className="form-group">
-                    <label>Password</label>
+                    <label>Password:</label>
                     <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
@@ -94,7 +94,7 @@ import logo from "../dashboard/UnitedUs.png"
                         />
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <button type="submit" className="btn btn-primary btn-block">Login</button>
                 <p className="forgot-password text-right">
                 Don'have an account?<Link to={"/signup"} >Sign up</Link>
                 </p>
